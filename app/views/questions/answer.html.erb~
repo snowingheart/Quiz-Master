@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= markdown @question.query %>
+</p>
+<p>
+  <strong>Answer:</strong>
+  <%= markdown @question.answer %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', home_index_path %>

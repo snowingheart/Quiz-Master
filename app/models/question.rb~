@@ -1,0 +1,16 @@
+class Question < ActiveRecord::Base
+
+  def correct_answer proposed_answer
+    if self.answer == proposed_answer
+      return true
+    else
+      if proposed_answer =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/
+        if proposed_answer.humanize == self.answer
+          return true
+        end
+      end
+    end
+    return false
+  end
+  
+end

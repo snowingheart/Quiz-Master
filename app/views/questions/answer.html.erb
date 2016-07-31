@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= markdown @question.query %>
+</p>
+<p>
+  <strong>Answer:</strong>
+  <%= form_tag validate_question_path(@question) do %>
+  <%= text_field_tag :proposed_answer %>
+  <%= submit_tag "Validate"%>
+  <% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

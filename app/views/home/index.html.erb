@@ -1,0 +1,20 @@
+
+<div class="row"> 
+  <h2>Welcome to Quiz Master!</h2>
+</div>
+<div class="row"> 
+  <p class="lead">Choose what you want to do:</p>
+</div>      
+<div class="row"> 
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-3">
+    <%= button_to "Create a question", new_question_path, {method: :get, class: 'btn btn-lg btn-success'} %>
+  </div>
+  <div class="col-xs-1">
+  </div>
+  <div class="col-xs-6">
+    <%= button_to "Answer a question", questions_path, {method: :get, class: 'btn btn-lg btn-info'} %>
+  </div>
+</div>
+

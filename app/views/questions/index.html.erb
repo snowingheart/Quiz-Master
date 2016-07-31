@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Available Questions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Question text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= markdown question.query %></td>
+        <td><%= button_to 'Answer', answer_question_path(question), {method: :get, class: 'btn btn-info sep'} %></td>
+        <td><%= button_to 'Edit', edit_question_path(question), {method: :get, class: 'btn btn-warning sep'} %></td>
+        <td><%= button_to 'Delete', question, {method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger sep'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', home_index_path %>
