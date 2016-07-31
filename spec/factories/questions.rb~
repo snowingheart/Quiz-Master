@@ -1,0 +1,7 @@
+# spec/factories/questions.rb
+FactoryGirl.define do
+  factory :question do |f|
+    f.query "What is love?"
+    f.answer "Baby don't hurt me."
+  end
+end

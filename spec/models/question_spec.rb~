@@ -1,0 +1,9 @@
+# spec/models/question.rb
+require 'rails_helper'
+
+describe Question do
+  it "has a valid factory"
+  it "is invalid without a query"
+  it "is invalid without an answer"
+  it "checks if a given answer is correct"
+end
