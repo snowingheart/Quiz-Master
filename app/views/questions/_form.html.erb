@@ -2,7 +2,6 @@
   <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
       <ul>
       <% @question.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,16 +9,23 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= f.label :query %>
+    <%= f.text_field :query, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :answer %>
+    <%= f.text_field :answer, class: "form-control" %>
+  </div>
+  <div class="row">
+    <div class="col-xs-9">
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group push-right-form">
+	<%= f.submit 'Add', class: "btn btn-lg btn-warning" %>
+	<%= button_to "Back", home_index_path, {method: :get, class: 'btn btn-lg btn-success', id: 'back-butan'} %>
+      </div>
 
-  <div class="field">
-    <%= f.label :query %><br>
-    <%= f.text_field :query %>
-  </div>
-  <div class="field">
-    <%= f.label :answer %><br>
-    <%= f.text_field :answer %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    </div>
   </div>
 <% end %>

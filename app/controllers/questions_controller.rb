@@ -16,7 +16,9 @@ class QuestionsController < ApplicationController
   end
 
   def validate
-    puts params
+    @question = Question.find(params[:id])
+    @pa = params[:proposed_answer]
+    @is_correct = @question.correct_answer(@pa)
   end
 
   # GET /questions/new

@@ -34,5 +34,7 @@ module QuizMaster
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+
   end
 end
